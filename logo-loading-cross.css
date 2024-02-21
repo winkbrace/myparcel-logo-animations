@@ -1,0 +1,32 @@
+@keyframes morphingCross {
+    0%, 100% {
+        transform: scale(1, 1);
+    }
+    15%, 85% {
+        transform: rotate(var(--rotateFactor))
+                   translate(var(--translateX), var(--translateY));
+    }
+}
+
+.logo-bar-cross {
+    transform-origin: center;
+    animation: morphingCross 3s ease-in-out infinite;
+
+    &.logo-bar-top {
+        --rotateFactor: 75deg;
+        --translateX: 0rem;
+        --translateY: 3.6rem;
+    }
+
+    &.logo-bar-middle {
+        --rotateFactor: -15deg;
+        --translateX: 0;
+        --translateY: 0;
+    }
+
+    &.logo-bar-bottom {
+        --rotateFactor: 75deg;
+        --translateX: 0rem;
+        --translateY: -3.6rem;
+    }
+}

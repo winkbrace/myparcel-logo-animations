@@ -1,0 +1,34 @@
+@keyframes morphingDelayed {
+    0%, 25%, 100% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(var(--scaleFactor), var(--scaleFactor)) translate(var(--translateX), var(--translateY));
+    }
+}
+
+.logo-bar-delayed {
+    transform-origin: center;
+    animation: morphingDelayed 1.5s ease-in-out infinite;
+
+    &.logo-bar-top {
+        --scaleFactor: 1.25;
+        --translateX: 5px;
+        --translateY: 5px;
+        animation-delay: 250ms;
+    }
+
+    &.logo-bar-middle {
+        --scaleFactor: 1.25;
+        --translateX: 0;
+        --translateY: 0;
+        animation-delay: 500ms;
+    }
+
+    &.logo-bar-bottom {
+        --scaleFactor: 1.25;
+        --translateX: -5px;
+        --translateY: -5px;
+        animation-delay: 750ms;
+    }
+}

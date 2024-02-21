@@ -1,0 +1,44 @@
+@keyframes morphingClock {
+    0% { transform: rotate(0turn); }
+    5% { transform: rotate(0.05turn); }
+   10% { transform: rotate(0.1turn); }
+   15% { transform: rotate(0.15turn); }
+   20% { transform: rotate(0.2turn); }
+   25% { transform: rotate(0.25turn); }
+   30% { transform: rotate(0.3turn); }
+   35% { transform: rotate(0.35turn); }
+   40% { transform: rotate(0.4turn); }
+   45% { transform: rotate(0.45turn); }
+   50% { transform: rotate(0.5turn); }
+   55% { transform: rotate(0.55turn); }
+   60% { transform: rotate(0.6turn); }
+   65% { transform: rotate(0.65turn); }
+   70% { transform: rotate(0.7turn); }
+   75% { transform: rotate(0.75turn); }
+   80% { transform: rotate(0.8turn); }
+   85% { transform: rotate(0.85turn); }
+   90% { transform: rotate(0.9turn); }
+   95% { transform: rotate(0.95turn); }
+  100% { transform: rotate(1turn); }
+}
+
+@keyframes fading {
+    0%, 100% { opacity: 1 }
+    20%, 80% { opacity: 0 }
+}
+
+.logo-bar-clock {
+    transform-origin: center;
+
+    &.logo-bar-top {
+        animation: fading 6s ease-in-out infinite;
+    }
+
+    &.logo-bar-middle {
+        animation: morphingClock 12s ease-in-out infinite;
+    }
+
+    &.logo-bar-bottom {
+        animation: fading 6s ease-in-out infinite;
+    }
+}

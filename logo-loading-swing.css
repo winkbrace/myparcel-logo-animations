@@ -1,0 +1,37 @@
+@keyframes morphingSwingTop {
+    0% { transform: rotate(0turn); }
+    10%, 12% { transform: rotate(-0.25turn); }
+    20% { transform: rotate(0.1turn); }
+    40%, 100% { transform: rotate(0turn); }
+}
+
+@keyframes morphingSwingMiddle {
+    0%, 19% { transform: translate(0); }
+    25%, 75% { transform: translate(10%, 10%); }
+    80%, 100% { transform: translate(0); }
+}
+
+@keyframes morphingSwingBottom {
+    0%, 25% { transform: rotate(0turn); }
+    35%, 37% { transform: rotate(0.5turn); }
+    60% { transform: rotate(0.6turn); }
+    75%, 100% { transform: rotate(0turn); }
+}
+
+.logo-bar-swing {
+    transform-origin: center;
+
+    &.logo-bar-top {
+        transform-origin: 10% 10%;
+        animation: morphingSwingTop 5s ease-in-out infinite;
+    }
+
+    &.logo-bar-middle {
+        animation: morphingSwingMiddle 5s linear infinite;
+    }
+
+    &.logo-bar-bottom {
+        transform-origin: bottom;
+        animation: morphingSwingBottom 5s ease-in-out infinite;
+    }
+}

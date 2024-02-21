@@ -1,0 +1,28 @@
+@keyframes morphingArrow {
+    0%, 100% {
+        transform: scale(1, 1);
+    }
+    20%, 80% {
+        transform: rotate(var(--rotateFactor)) translate(var(--translateX), var(--translateY));
+    }
+}
+
+.logo-bar-arrow {
+    transform-origin: center;
+    animation: morphingArrow 3s ease-in-out infinite;
+
+    &.logo-bar-top {
+        --rotateFactor: 45deg;
+        --translateX: 10px;
+        --translateY: 0;
+    }
+
+    &.logo-bar-middle {
+    }
+
+    &.logo-bar-bottom {
+        --rotateFactor: -45deg;
+        --translateX: 0;
+        --translateY: -10px;
+    }
+}

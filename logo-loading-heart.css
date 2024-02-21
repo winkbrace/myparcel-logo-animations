@@ -1,0 +1,31 @@
+@keyframes morphingHeart {
+    0%, 25%, 100% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(var(--scaleFactor), var(--scaleFactor)) translate(var(--translateX), var(--translateY));
+    }
+}
+
+.logo-bar-heart {
+    transform-origin: center;
+    animation: morphingHeart 1s ease-in-out infinite;
+
+    &.logo-bar-top {
+        --scaleFactor: 1.25;
+        --translateX: 5px;
+        --translateY: 5px;
+    }
+
+    &.logo-bar-middle {
+        --scaleFactor: 0.75;
+        --translateX: 0;
+        --translateY: 0;
+    }
+
+    &.logo-bar-bottom {
+        --scaleFactor: 1.25;
+        --translateX: -5px;
+        --translateY: -5px;
+    }
+}

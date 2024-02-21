@@ -1,0 +1,28 @@
+@keyframes morphingSlide {
+    0% {
+        transform: translate(9rem, -6rem);
+    }
+    25%, 75% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-9rem, 6rem);
+    }
+}
+
+.logo-bar-slide {
+    transform-origin: center;
+    animation: morphingSlide 2s ease-in-out infinite;
+
+    &.logo-bar-top {
+        animation-delay: 250ms;
+    }
+
+    &.logo-bar-middle {
+        animation-delay: 500ms;
+    }
+
+    &.logo-bar-bottom {
+        animation-delay: 750ms;
+    }
+}
