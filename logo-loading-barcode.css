@@ -1,0 +1,66 @@
+.scan-container {
+    position: relative;
+    overflow: hidden;
+}
+
+svg.logo-barcode {
+    animation: straightenBars 4s ease-in-out infinite;
+    
+}
+
+@keyframes straightenBars {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(-60deg); }
+    75% { transform: rotate(-60deg); }
+}
+
+.logo-bar-barcode {
+    transform-origin: center;
+    animation: morphingBarcode 4s ease-in-out infinite;
+
+    &.logo-bar-top {
+        --scaleFactor: 1.25;
+        --translateX: 5px;
+        --translateY: 5px;
+    }
+
+    &.logo-bar-middle {
+        --scaleFactor: 0.75;
+        --translateX: 0;
+        --translateY: 0;
+    }
+
+    &.logo-bar-bottom {
+        --scaleFactor: 1.25;
+        --translateX: -5px;
+        --translateY: -5px;
+    }
+}
+
+@keyframes morphingBarcode {
+    0%, 10%, 90% {
+        transform: scale(1, 1);
+    }
+    25%, 75% {
+        transform: scale(var(--scaleFactor), var(--scaleFactor)) translate(var(--translateX), var(--translateY));
+    }
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #0f5c47 40%, transparent);
+    box-shadow: 0 0 15px #0f5c47;
+    animation: scan 4s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes scan {
+    0% { transform: translateY(-10%); opacity: 0; }
+    25% { transform: translateY(-10%); opacity: 0; }
+    30% { transform: translateY(-10%); opacity: 1; }
+    75% { transform: translateY(110%); opacity: 0; }
+}
